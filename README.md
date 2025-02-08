@@ -95,39 +95,53 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 - **Endpoint**: `GET /api/tasks/:id`
 
 - **Response**:
--  ""_id": "<task_id>","
--  ""title": "Design Homepage","
--  ""description": "Create wireframes","
--  ""dueDate": "2025-12-31T00:00:00.000Z","
--  ""status": "pending","
--  ""...""
+```
+{
+  "_id": "<task_id>",
+  "title": "Design Homepage",
+  "description": "Create wireframes",
+  "dueDate": "2025-12-31T00:00:00.000Z",
+  "status": "pending",
+  ...
+}
+```
 
 
 ### Update Task
 - **Endpoint**: `PUT /api/tasks/:id`
 
 - **Request Body**:
--  "title": "Updated Title",
--  "description": "Updated description",
--  "dueDate": "2025-10-10",
--  "status": "completed"
+```json
+{
+  "title": "Updated Title",
+  "description": "Updated description",
+  "dueDate": "2025-10-10",
+  "status": "completed"
+}
+```
 
 
 - **Response**:
--  "message": "Task updated",
--  "task": 
--    "_id": "<task_id>",
--    "title": "Updated Title",
--    "description": "Updated description",
--    "dueDate": "2025-10-10T00:00:00.000Z",
--    "status": "completed",
--    "..."
+```json
+{
+  "message": "Task updated",
+  "task": {
+    "_id": "<task_id>",
+    "title": "Updated Title",
+    "description": "Updated description",
+    "dueDate": "2025-10-10T00:00:00.000Z",
+    "status": "completed",
+    ...
+  }
+}
+```
 
 
 ### Mark Task as Complete
 - **Endpoint**: `PATCH /api/tasks/:id/complete`
 
 - **Response**:
+```json
 {
   "message": "Task marked as completed",
    "task": 
@@ -135,6 +149,7 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
      "status": "completed",
      "..."
 }
+```
 
 ### Delete
 - **Endpoint**: `DELETE /api/tasks/:id`
