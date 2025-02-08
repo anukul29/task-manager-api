@@ -33,43 +33,65 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 ### Register a New User
 - **Endpoint**: `POST /api/users/register`
 - **Request Body**:
-
-- "username": "johndoe",
-- "password": "secret123"
+```
+{
+    "username": "johndoe",
+    "password": "secret123"
+}
+```
 
 - **Response**:
-- "username": "johndoe",
-- "password": "secret123"
-
+```
+{
+  "message": "User created successfully"
+}
+```
 
 ### Login
 - **Endpoint**: `POST /api/users/login`
 - **Request Body**:
-
-- "username": "johndoe",
-- "password": "secret123"
+```
+{
+  "username": "johndoe",
+  "password": "secret123"
+}
+```
 
 - **Response**:
--  "message": "Login successful",
--  "token": "<JWT_TOKEN>"
+```
+{
+  "message": "Login successful",
+  "token": "<JWT_TOKEN>"
+}
+```
 
 
 ### Create Task
 - **Endpoint**: `POST /api/tasks`
 - **Request Body**:
-    """title": "Design Homepage",
-    "description": "Create wireframes and mockups",
-    "dueDate": "2025-12-31"""
+```
+{
+  "title": "Design Homepage",
+  "description": "Create wireframes",
+  "dueDate": "2025-12-31"
+}
+```
 
 - **Response**:
--  "message": "Task created",
--  "task": 
--    "_id": "<task_id>",
--    "user": "<user_id>",
--    "title": "Design Homepage",
--    "description": "Create wireframes and mockups",
--    "dueDate": "2025-12-31T00:00:00.000Z",
--    "status": "pending",
+```
+{
+  "message": "Task created",
+  "task": {
+    "_id": "<task_id>",
+    "user": "<user_id>",
+    "title": "Design Homepage",
+    "description": "Create wireframes",
+    "dueDate": "2025-12-31T00:00:00.000Z",
+    "status": "pending",
+    ...
+  }
+}
+```
 
 
 ### Get Tasks
