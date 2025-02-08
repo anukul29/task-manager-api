@@ -128,12 +128,13 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 - **Endpoint**: `PATCH /api/tasks/:id/complete`
 
 - **Response**:
--  "message": "Task marked as completed",
--   "task": 
--     "_id": "<task_id>",
--     "status": "completed",
--     "..."
-
+{
+  "message": "Task marked as completed",
+   "task": 
+     "_id": "<task_id>",
+     "status": "completed",
+     "..."
+}
 
 ### Delete
 - **Endpoint**: `DELETE /api/tasks/:id`
