@@ -57,9 +57,9 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 ### Create Task
 - **Endpoint**: `POST /api/tasks`
 - **Request Body**:
--  "title": "Design Homepage",
--  "description": "Create wireframes and mockups",
--  "dueDate": "2025-12-31"
+    """title": "Design Homepage",
+    "description": "Create wireframes and mockups",
+    "dueDate": "2025-12-31"""
 
 - **Response**:
 -  "message": "Task created",
@@ -83,13 +83,18 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 -   "GET /api/tasks?status=pending&dueBefore=2025-12-31"
 
 - **Response**:
--    "_id": "<task_id>",
--    "title": "Design Homepage",
--    "description": "Create wireframes",
--    "dueDate": "2025-12-31T00:00:00.000Z",
--    "status": "pending",
--    "..."
-
+```
+[
+  {
+    "_id": "<task_id>",
+    "title": "Design Homepage",
+    "description": "Create wireframes",
+    "dueDate": "2025-12-31T00:00:00.000Z",
+    "status": "pending",
+    ...
+  }
+]
+```
 
 ### Get Task
 - **Endpoint**: `GET /api/tasks/:id`
@@ -111,7 +116,7 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 - **Endpoint**: `PUT /api/tasks/:id`
 
 - **Request Body**:
-```json
+```
 {
   "title": "Updated Title",
   "description": "Updated description",
@@ -122,7 +127,7 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 
 
 - **Response**:
-```json
+```
 {
   "message": "Task updated",
   "task": {
@@ -141,7 +146,7 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 - **Endpoint**: `PATCH /api/tasks/:id/complete`
 
 - **Response**:
-```json
+```
 {
   "message": "Task marked as completed",
    "task": 
