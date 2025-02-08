@@ -139,7 +139,7 @@ A simple Task Management API that allows users to manage tasks with basic JWT-ba
 - **Endpoint**: `DELETE /api/tasks/:id`
 
 - **Response**:
-```json
+```
 {
   "message": "Task deleted"
 }
