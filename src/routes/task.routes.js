@@ -3,6 +3,7 @@ const { body } = require('express-validator');
 const router = express.Router();
 const auth = require('../middlewares/auth');
 const taskController = require('../controllers/task.controller');
+const { checkErrors } = require('../middlewares/validation');
 
 // Protected routes
 // Create Task
@@ -10,6 +11,7 @@ router.post(
   '/',
   auth,
   [ body('title').notEmpty().withMessage('Title is required') ],
+  checkErrors,
   taskController.createTask
 );
 
@@ -27,6 +29,7 @@ router.put(
     body('title').optional().notEmpty().withMessage('Title cannot be empty'),
     body('status').optional().isIn(['pending', 'completed']).withMessage('Invalid status')
   ],
+  checkErrors,
   taskController.updateTask
 );
 

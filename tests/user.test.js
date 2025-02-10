@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../src/server'); // If you export `app` from server.js
+const app = require('../src/server');
 
 describe('User Endpoints', () => {
   it('should register a new user', async () => {

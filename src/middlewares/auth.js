@@ -13,6 +13,8 @@ module.exports = function (req, res, next) {
     return res.status(401).json({ message: 'Token missing' });
   }
 
+  // console.log(token);
+
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded; // { userId: '...', iat: ..., exp: ... }
